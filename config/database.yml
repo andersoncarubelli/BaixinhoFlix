@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: baixinhoFlix_development
+
+test:
+  <<: *default
+  database: baixinhoFlix_test
+
+production:
+  <<: *default
+  database: baixinhoFlix_production
+  username: baixinhoFlix
+  password: <%= ENV['BAIXINHOFLIX_DATABASE_PASSWORD'] %>
