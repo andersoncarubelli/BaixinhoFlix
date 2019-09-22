@@ -35,6 +35,7 @@ gem 'fast_jsonapi', git: "https://github.com/Netflix/fast_jsonapi", branch: "dev
 # Pesquisas dentro do Postgresql
 gem 'pg_search'
 
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -47,6 +48,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  #Foreman
+  gem 'foreman'
 end
 
 group :test do
