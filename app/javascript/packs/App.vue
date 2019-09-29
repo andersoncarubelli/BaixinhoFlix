@@ -1,22 +1,31 @@
 <template>
-  <div id="app">
-    <p>{{ message }}</p>
-  </div>
+  <v-app>
+    <Header/>
+    <v-content>
+      <h4 class="white--text">Main Component</h4>
+    </v-content>
+    <Footer/>
+  </v-app>
 </template>
 
 <script>
-export default {
-  data: function () {
-    return {
-      message: "Hello Vue!"
+  import Header from './components/shared/header.vue';
+  import Footer from './components/shared/footer.vue';
+
+  export default {
+    data () {
+      return {
+      }
+    },
+    components: {
+      'Footer': Footer,
+      'Header': Header
     }
   }
-}
 </script>
 
-<style scoped>
-p {
-  font-size: 2em;
-  text-align: center;
-}
+<style>
+  #app {
+    background-color: #0c0c0c !important;
+  }
 </style>
