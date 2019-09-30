@@ -83,15 +83,15 @@
 </script>
 
 <style scoped>
- .movie_list{
-   margin-left: 4%;
-   margin-top: 30px;
-   margin-bottom: 20px;
- }
- .name {
-   font-size: 24px !important;
-   font-family: 'Source Sans Pro';
-   font-weight: 600;
-   color: white;
- }
+  .movie_list{
+    margin-left: 4%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  .name {
+    font-size: 24px !important;
+    font-family: 'Source Sans Pro';
+    font-weight: 600;
+    color: white;
+  }
 </style>
