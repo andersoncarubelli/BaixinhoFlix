@@ -7,7 +7,7 @@
             <a v-for="movie in movies"
               :key="movie.id"
               href="#"
-              @click= "openDetails($event, movie.id)"
+              @click="openDetails($event, movie.id)"
               >
               <img :src="movie.thumb_url">
             </a>
