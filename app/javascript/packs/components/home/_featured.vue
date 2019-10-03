@@ -7,12 +7,12 @@
             <p class="title">{{ movie.title }}</p>
           </v-flex>
           <v-flex sm6 md4>
-            <v-btn color="black" large :to="'/watch/' + movie.id">
+            <v-btn color="black" class="white--text" large :to="'/watch/' + movie.id">
               Assistir
             </v-btn>
           </v-flex>
           <v-flex sm6 md4>
-            <v-btn color="black" large>
+            <v-btn color="black" class="white--text" large>
               + Minha Lista
             </v-btn>
           </v-flex>

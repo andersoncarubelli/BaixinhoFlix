@@ -1,6 +1,6 @@
 <template>
-  <div v-if="watchable != null">
-    <v-layout class="content" mt-3 wrap row>
+  <div v-if = "watchable != null">
+    <v-layout class =" content " mt -3 wrap row >
       <v-flex md10 offset-md1 xs7 offset-xs1 sm9 mt-4>
         <h4 class="title white--text" >{{ watchable.attributes.title }}</h4>
       </v-flex>
@@ -9,7 +9,7 @@
           <v-icon color="white">clear</v-icon>
         </v-btn>
       </v-flex>
-      <!-- <Details v- if = "contentActive == 'details'" /> -->
+      <Details v-if="contentActive == 'details'" :watchable="watchable" />
       <!-- <Episodes v- if = "contentActive == 'episodes'" /> -->
       <!-- <Reviews v- if = "contentActive == 'reviews'" /> -->
     </v-layout>
@@ -17,37 +17,35 @@
       <v-flex md6>
         <v-tabs fixed-tabs color="black" dark>
           <v-tabs-slider color="red"></v-tabs-slider>
-            <v-tab color= "white" href= "#details"
-              @click= "changeContent('details')">
-              <p color= "white" >Details</p>
-            </v-tab>
-            <v-tab color= "white" href= "#episodes"
-              @click= "changeContent('episodes')"
-              v-if = "watchable.type == 'serie'" >
-              <p color= "white" >Episódios</p>
-            </v-tab>
-            <v-tab color= "white" href= "#reviews"
-              @click= "changeContent('reviews')" >
-              <p color="white">Reviews</p>
-            </v-tab>
-          </v-tabs>
-        </v-flex>
+          <v-tab color= "white" href= "#details" @click= "changeContent('details')" >
+            <p color= "white" >Details</p>
+          </v-tab>
+          <v-tab color= "white" href= "#episodes" @click= "changeContent('episodes')" v- if = "watchable.type == 'serie'" >
+            <p color= "white" >Episódios</p>
+          </v-tab>
+          <v-tab color="white" href= "#reviews" @click= "changeContent('reviews')" >
+            <p color= "white" >Reviews</p>
+          </v-tab>
+        </v-tabs>
+      </v-flex>
     </v-layout>
   </div>
 </template>
 
 <script>
- // ------- Dados Fake apenas para testarmos o layout -------- //
+  import Details from './_details.vue';
+
+  // ------- Dados Fake apenas para testarmos o layout -------- //
   const watchable = {
     id: 1,
     type: 'serie',
     attributes: {
-      title: 'Ruby On Rails Api Completa',
-      reviews_count: 5,
-      description: `Saber como criar e consumir API's é fundamental para
+      title: ' Ruby On Rails API Completa ',
+      reviews_count: 2,
+      description: `Saber como criar e consumir API 's é fundamental para
         qualquer programador, então nessa pequena série nós vamos ver o que é
         essencial para criar uma usando RoR.`,
-      category: 'Ruby On Rails',
+      category: 'Ruby On Rails' ,
       thumbnail_cover_url: 'https://onebitcode.com/wp-content/uploads/2018/05/rails-admin-serie-cover.png'
     }
   }
@@ -56,7 +54,7 @@
     props: {
       id: {
         type: Number,
-        required: true,
+        required: true ,
       },
       type: {
         type: String,
@@ -64,12 +62,12 @@
       },
       closeDetails: {
         type: Function,
-        required: true,
+        required: true ,
       }
     },
     data () {
       return {
-        contentActive: 'details',
+        contentActive: 'details' ,
         watchable: watchable
       }
     },
@@ -82,6 +80,7 @@
       }
     },
     components: {
+      Details: Details
     }
   }
 </script>

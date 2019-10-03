@@ -1,26 +1,24 @@
 <template>
   <div>
-    <v-layout row wrap class="movie_list">
+    <v-layout row wrap class =" movie_list ">
       <v-flex xs12>
-        <p class='name'>{{ name }}</p>
-          <slick ref= "slick" :options="slickOptions">
-            <a v-for="movie in movies"
-              :key="movie.id"
-              href="#"
-              @click="openDetails($event, movie.id)"
-              >
-              <img :src="movie.thumb_url">
-            </a>
-          </slick>
+        <p class ='name'>{{ name }}</p>
+        <slick ref= "slick" :options="slickOptions">
+          <a v-for = "movie in movies"
+            :key="movie.id"
+            href="#"
+            @click= "openDetails($event, movie.id)"
+              ><img :src="movie.thumb_url">
+          </a>
+        </slick>
       </v-flex>
     </v-layout>
-    <MovieMenu v-if="menuOpen" :id="movieId"
-      :type="movieType" :closeDetails="closeDetails"/>
+    <MovieMenu v-if="menuOpen" :id="movieId" :type="movieType" :closeDetails="closeDetails"/>
   </div>
 </template>
 
 <script>
-  import MovieMenu from './_movie_menu.vue';
+  import MovieMenu from './_movie_menu.vue' ;
   import Slick from 'vue-slick' ;
 
   export default {
@@ -41,7 +39,7 @@
         movieType: 'serie',
         slickOptions: {
           slidesToShow: 4,
-          arrows: false ,
+          arrows: false,
           responsive: [
             {
               breakpoint: 1024,
@@ -70,9 +68,9 @@
         e.preventDefault();
         if (this.menuOpen == true && this.movieId == id){
           this.closeDetails();
-        }else{
+        }else {
           this.movieId = parseInt(id);
-          this.menuOpen = true;
+          this.menuOpen = true ;
         }
       },
       closeDetails(){
